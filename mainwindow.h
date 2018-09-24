@@ -46,6 +46,8 @@ protected:
 private slots:
     void onButtonPressed(int id);
     void onButtonReleased(int id);
+public slots:
+    void onButtonPressed2(int id);
 
 signals:
     void startSensor();

@@ -293,6 +293,13 @@ void MainWindow::onButtonReleased(int id)
 
 
 
+void MainWindow::onButtonPressed2(int id)
+{
+    qDebug()<<"pressed2 "<<id;
+
+
+}
+
 
 void MainWindow::initGpios()
 {
@@ -304,10 +311,13 @@ void MainWindow::initGpios()
     sensor->moveToThread(thread);
 
 
-    bool success = connect(sensor,SIGNAL(pushButton(int)),this,SLOT(onButtonPressed(int)));
-    qDebug()<<"connection? "<<success;
-    success = connect(sensor,SIGNAL(releaseButton(int)),this,SLOT(onButtonReleased(int)));
-    qDebug()<<"connection? "<<success;
+    connect(sensor,SIGNAL(pushButton(int)),this,SLOT(onButtonPressed2(int)));
+
+    connect(sensor,SIGNAL(releaseButton(int)),this,SLOT(onButtonReleased(int)));
+
+
+
+
     connect(this,SIGNAL(startSensor()),sensor,SLOT(startProcess()));
     thread->start();
 

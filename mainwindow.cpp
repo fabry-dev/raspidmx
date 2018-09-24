@@ -311,17 +311,19 @@ void MainWindow::initGpios()
     sensor->moveToThread(thread);
 
 
+   // connect(sensor,SIGNAL(pushButton(int)),this,SLOT(onButtonPressed2(int)));
     connect(sensor,SIGNAL(pushButton(int)),this,SLOT(onButtonPressed2(int)));
-
     connect(sensor,SIGNAL(releaseButton(int)),this,SLOT(onButtonReleased(int)));
 
 
 
 
-    connect(this,SIGNAL(startSensor()),sensor,SLOT(startProcess()));
+    //connect(this,SIGNAL(startSensor()),sensor,SLOT(startProcess()));
+
+    connect(thread,SIGNAL(started()),sensor,SLOT(startProcess()));
     thread->start();
 
-    emit startSensor();
+    //emit startSensor();
 
 
 

@@ -278,7 +278,7 @@ void MainWindow::onButtonPressed(int id)
 {
     qDebug()<<"pressed "<<id;
     turnLightOn(id);
-    fadeDmx2()
+    fadeDmx2();
 
 }
 

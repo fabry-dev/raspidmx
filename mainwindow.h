@@ -34,7 +34,8 @@ private:
     std::vector<bool> lights;
     void turnLightOn(int n);
     void turnLightOff(int n);
-    void fadeDmx();
+    void fadeDmx2();
+    void resetDmx2();
 
 
 protected:

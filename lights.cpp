@@ -59,6 +59,8 @@ void MainWindow::fadeDmx2()
     QString txt = "/usr/bin/python "+PATH+"fadeDmx.py &";
     system(txt.toStdString().c_str());
 
+    qDebug()<<"fade";
+
 }
 
 void MainWindow::resetDmx2()
@@ -67,7 +69,7 @@ void MainWindow::resetDmx2()
     QString txt = "/usr/bin/python "+PATH+"resetDmx.py &";
     system(txt.toStdString().c_str());
 
-
+    qDebug()<<"stop";
 
 }
 

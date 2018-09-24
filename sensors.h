@@ -1,7 +1,7 @@
 #ifndef SENSORS_H
 #define SENSORS_H
 #include "QObject"
-#include "/home/fred/PIGPIO/pigpio.h"
+#include "/home/pi/PIGPIO/pigpio.h"
 
 
 

@@ -311,6 +311,8 @@ void MainWindow::initGpios()
 
     emit startSensor();
 
+    qDebug()<<"ble";
+
 
 
 

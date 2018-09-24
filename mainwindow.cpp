@@ -312,8 +312,8 @@ void MainWindow::initGpios()
 
 
    // connect(sensor,SIGNAL(pushButton(int)),this,SLOT(onButtonPressed2(int)));
-    connect(sensor,SIGNAL(pushButton(int)),this,SLOT(onButtonPressed2(int)));
-    connect(sensor,SIGNAL(releaseButton(int)),this,SLOT(onButtonReleased(int)));
+    connect(sensor,SIGNAL(pushButton(int)),this,SLOT(onButtonPressed2(int)),Qt::DirectConnection);
+    connect(sensor,SIGNAL(releaseButton(int)),this,SLOT(onButtonReleased(int)),Qt::DirectConnection);
 
 
 

@@ -17,10 +17,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     button.cpp \
-    lights.cpp
+    lights.cpp \
+    sensors.cpp
 
 HEADERS  += mainwindow.h \
-    button.h
+    button.h \
+    sensors.h
 
 FORMS    += mainwindow.ui
+LIBS += -lpigpio
 

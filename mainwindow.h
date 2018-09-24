@@ -5,7 +5,7 @@
 #include "qfile.h"
 #include "qdebug.h"
 #include "button.h"
-
+#include "sensors.h"
 #define PATH_DEFAULT (QString)"/home/fred/Dropbox/Taf/Cassiopee/RaspiDMX/files/"
 #define BUTTON_WIDTH_DEFAULT  100
 
@@ -36,7 +36,8 @@ private:
     void turnLightOff(int n);
     void fadeDmx2();
     void resetDmx2();
-
+    void initGpios();
+    Sensor* sensor;
 
 protected:
     bool eventFilter(QObject *obj, QEvent *event);
@@ -45,6 +46,9 @@ protected:
 private slots:
     void onButtonPressed(int id);
     void onButtonReleased(int id);
+
+signals:
+    void startSensor();
 };
 
 #endif // MAINWINDOW_H

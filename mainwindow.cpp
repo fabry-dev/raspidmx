@@ -304,7 +304,7 @@ void MainWindow::initGpios()
     sensor->moveToThread(thread);
 
 
-    bool success = onnect(sensor,SIGNAL(pushButton(int)),this,SLOT(onButtonPressed(int)));
+    bool success = connect(sensor,SIGNAL(pushButton(int)),this,SLOT(onButtonPressed(int)));
     Q_ASSERT(success);
     connect(sensor,SIGNAL(releaseButton(int)),this,SLOT(onButtonReleased(int)));
     connect(this,SIGNAL(startSensor()),sensor,SLOT(startProcess()));

@@ -2,7 +2,7 @@
 #define SENSORS_H
 #include "QObject"
 #include "/home/pi/PIGPIO/pigpio.h"
-
+static const int outputs[] = {5,6,13,19,26,21,20,16,12,1};
 
 
 

@@ -2,6 +2,7 @@
 #include "qdebug.h"
 #include "qthread.h"
 #define Nbuttons 10
+#define Noutputs 10
 
 static const int buttons[] = {2,3,4,17,27,22,10,9,11,0};
 
@@ -23,6 +24,12 @@ Sensor::Sensor() { // Constructor
     {
         gpioSetMode(buttons[i], PI_INPUT);
         gpioSetPullUpDown(buttons[i], PI_PUD_UP);
+
+    }
+    for (int i= 0;i<Noutputs;i++)
+    {
+        gpioSetMode(outputs[i], PI_OUTPUT);
+
 
     }
 

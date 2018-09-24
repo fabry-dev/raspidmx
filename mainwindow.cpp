@@ -279,6 +279,7 @@ void MainWindow::arrangeButtons()
 void MainWindow::onButtonPressed(int id)
 {
     qDebug()<<"pressed "<<id;
+    gpioWrite(outputs[id-1],1);
     turnLightOn(id);
     fadeDmx2();
 
@@ -287,6 +288,7 @@ void MainWindow::onButtonPressed(int id)
 void MainWindow::onButtonReleased(int id)
 {
     qDebug()<<"released "<<id;
+    gpioWrite(outputs[id-1],0);
     turnLightOff(id);
     resetDmx2();
 }

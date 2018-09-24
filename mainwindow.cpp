@@ -278,6 +278,7 @@ void MainWindow::onButtonPressed(int id)
 {
     qDebug()<<"pressed "<<id;
     turnLightOn(id);
+    fadeDmx2()
 
 }
 
@@ -285,5 +286,6 @@ void MainWindow::onButtonReleased(int id)
 {
     qDebug()<<"released "<<id;
     turnLightOff(id);
+    resetDmx2();
 }
 

@@ -53,6 +53,23 @@ void MainWindow::sendDmx()
 }
 
 
+void MainWindow::fadeDmx2()
+{
+
+    QString txt = "/usr/bin/python "+PATH+"fadeDmx.py &";
+    system(txt.toStdString().c_str());
+
+}
+
+void MainWindow::resetDmx2()
+{
+
+    QString txt = "/usr/bin/python "+PATH+"resetDmx.py &";
+    system(txt.toStdString().c_str());
+
+
+
+}
 
 
 

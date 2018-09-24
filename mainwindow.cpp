@@ -305,8 +305,9 @@ void MainWindow::initGpios()
 
 
     bool success = connect(sensor,SIGNAL(pushButton(int)),this,SLOT(onButtonPressed(int)));
-    Q_ASSERT(success);
-    connect(sensor,SIGNAL(releaseButton(int)),this,SLOT(onButtonReleased(int)));
+    qDebug()<<"connection? "<<success;
+    success = connect(sensor,SIGNAL(releaseButton(int)),this,SLOT(onButtonReleased(int)));
+    qDebug()<<"connection? "<<success;
     connect(this,SIGNAL(startSensor()),sensor,SLOT(startProcess()));
     thread->start();
 
